@@ -11,5 +11,6 @@ phases:
   post_build:
     commands:
       - docker push 327568102787.dkr.ecr.ap-south-1.amazonaws.com/braintask-app:latest
+      - aws eks update-kubeconfig --region ap-south-1 --name brainapp-cluster
       - kubectl apply -f deployment.yaml
       - kubectl apply -f service.yaml
