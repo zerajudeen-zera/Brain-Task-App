@@ -4,6 +4,9 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 327568102787.dkr.ecr.ap-south-1.amazonaws.com
+      - curl -LO https://dl.k8s.io/release/v1.32.0/bin/linux/amd64/kubectl
+      - chmod +x kubectl
+      - mv kubectl /usr/local/bin/
   build:
     commands:
       - docker build -t braintask-app .
