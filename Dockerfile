@@ -1,6 +1,6 @@
 #Using official nginx alpine image
 
-FROM nginx:alpine
+FROM public.ecr.aws/nginx/nginx:alpine
 
 RUN rm -rf /usr/share/nginx/html/*
 
