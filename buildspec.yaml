@@ -11,3 +11,5 @@ phases:
   post_build:
     commands:
       - docker push 327568102787.dkr.ecr.ap-south-1.amazonaws.com/braintask-app:latest
+      - kubectl apply -f deployment.yaml
+      - kubectl apply -f service.yaml
